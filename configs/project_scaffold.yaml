@@ -1,9 +1,9 @@
 run_name: project_scaffold
 project:
-  name: personalization-experimentation-platform
+  name: feed-ranking-experimentation-system
   domain: content_feed_personalization
   base_dataset: mind
-  product_story: Feed / Content Personalization + Experimentation Platform for Session-Level Engagement Optimization
+  product_story: Feed Ranking and Experimentation System for Session-Level Engagement Optimization
 modules:
   - data
   - retrieval

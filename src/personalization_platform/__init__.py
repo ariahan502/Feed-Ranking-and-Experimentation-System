@@ -1,2 +1,1 @@
-"""Personalization experimentation platform package."""
-
+"""Feed ranking and experimentation system package."""

@@ -1,6 +1,6 @@
 # Configs
 
-This directory stores config-backed entrypoints for the personalization project.
+This directory stores config-backed entrypoints for the feed ranking and experimentation system.
 
 Validation tiers:
 

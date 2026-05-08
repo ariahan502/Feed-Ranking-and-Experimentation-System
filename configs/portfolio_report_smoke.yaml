@@ -1,9 +1,9 @@
 run_name: portfolio_report_smoke
 
 project:
-  name: Personalization Experimentation Platform
-  report_name: Personalization System Summary
-  architecture_note_name: Personalization Architecture Note
+  name: Feed Ranking and Experimentation System
+  report_name: Feed Ranking System Summary
+  architecture_note_name: Feed Ranking Architecture Note
 
 input:
   artifacts_base_dir: artifacts/runs

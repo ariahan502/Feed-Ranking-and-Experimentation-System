@@ -1,8 +1,8 @@
-# Personalization Experimentation Platform Roadmap
+# Feed Ranking and Experimentation System Roadmap
 
 ## Goal
 
-Build and maintain a reproducible offline personalization and experimentation pipeline for a content-platform feed, currently using MIND as the raw interaction source.
+Build and maintain a reproducible offline feed ranking and experimentation pipeline for a content-platform feed, currently using MIND as the raw interaction source.
 
 The project will support data preparation, candidate generation, ranking, reranking constraints, replay-style evaluation, experiment assignment, A/B analysis, reporting, and quality checks.
 

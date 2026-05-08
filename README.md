@@ -1,6 +1,6 @@
-# Personalization Experimentation Platform
+# Feed Ranking and Experimentation System
 
-This repository is a reproducible, config-driven personalization and experimentation system for a content feed.
+This repository is a reproducible, config-driven feed ranking and experimentation system for a content feed.
 
 The project implements a full offline workflow for feed ranking:
 
@@ -20,7 +20,7 @@ The current raw interaction source is `MIND`, the Microsoft News Dataset. In thi
 - fastest validation path: `bash scripts/ci_smoke.sh`
 - richer retrieval-and-ranking validation path: `bash scripts/ci_medium.sh`
 - strongest local treatment-and-lifecycle validation path: `bash scripts/ci_simulated_live.sh`
-- production boundary: this repo is an offline experimentation platform and local demo surface, not a production recommender stack
+- production boundary: this repo is an offline feed ranking and experimentation system plus local demo surface, not a production recommender stack
 
 ## Process
 
@@ -43,6 +43,8 @@ The current end-to-end flow is:
 
 Each stage is implemented as package code under `src/personalization_platform/`, configured through `configs/`, and validated by writing artifact bundles under `artifacts/runs/`.
 
+The project name is now `Feed Ranking and Experimentation System`, while the Python module path remains `personalization_platform` for compatibility with the existing commands and scripts.
+
 Run manifests now carry normalized lineage metadata:
 
 - `run_metadata` records the current run id, timestamp, run name, artifact path, and output path when applicable
@@ -56,6 +58,7 @@ The current highest-signal local commands are:
 bash scripts/ci_smoke.sh
 bash scripts/ci_medium.sh
 bash scripts/ci_simulated_live.sh
+feed-ranking-show-blueprint --config configs/project_scaffold.yaml
 PYTHONPATH=src python -m personalization_platform.pipeline.serve_ranked_feed --config configs/local_api.yaml
 PYTHONPATH=src python -m personalization_platform.pipeline.build_portfolio_report --config configs/portfolio_report_smoke.yaml
 ```
@@ -138,7 +141,7 @@ This is an honest offline engineering pattern: use a real public interaction dat
 
 For portfolio or resume framing, the honest description is:
 
-- reproducible offline personalization and experimentation platform
+- reproducible offline feed ranking and experimentation system
 - request-level event-log build over MIND
 - multi-source retrieval, baseline ranking, reranking constraints, experiment readout, monitoring, and local demo API
 
@@ -197,9 +200,9 @@ bash scripts/docker_medium.sh
 If you prefer the raw Docker commands, they are:
 
 ```bash
-docker build -t personalization-platform:local .
-docker run --rm personalization-platform:local bash scripts/ci_smoke.sh
-docker run --rm personalization-platform:local bash scripts/ci_medium.sh
+docker build -t feed-ranking-system:local .
+docker run --rm feed-ranking-system:local bash scripts/ci_smoke.sh
+docker run --rm feed-ranking-system:local bash scripts/ci_medium.sh
 ```
 
 The container image is intentionally thin and includes the fixture data plus the repo-local validation commands, but it does not include large raw datasets or previously generated artifacts.
@@ -558,7 +561,7 @@ This project should be read as a production-style offline system prototype:
 - retrieval, ranking, reranking, experimentation, monitoring, delivery, and reporting are all explicit stages
 - the repo is strongest as evidence of system design, pipeline engineering, and decision-oriented ML workflow design
 
-The target outcome is a credible feed-personalization project that shows engineering depth across offline ranking, policy constraints, experiment structure, monitoring, and delivery.
+The target outcome is a credible feed ranking and experimentation system that shows engineering depth across offline ranking, policy constraints, experiment structure, monitoring, and delivery.
 
 ## Remaining Extensions
 
